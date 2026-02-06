@@ -108,43 +108,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Gideon Solutions */}
-      <section className="border-t bg-gray-50 py-16">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="mb-6 text-3xl font-bold text-gray-900">
-            Why Gideon Solutions?
-          </h2>
-          <div className="grid gap-8 sm:grid-cols-3">
-            <div>
-              <h3 className="mb-2 text-lg font-semibold text-gray-900">
-                Transparent Pricing
-              </h3>
-              <p className="text-sm leading-relaxed text-gray-600">
-                No hidden fees. We publish our prices so you know exactly what to
-                expect before we start.
-              </p>
-            </div>
-            <div>
-              <h3 className="mb-2 text-lg font-semibold text-gray-900">
-                Technical Expertise
-              </h3>
-              <p className="text-sm leading-relaxed text-gray-600">
-                Deep experience across tax preparation, web development, data
-                engineering, and IT operations.
-              </p>
-            </div>
-            <div>
-              <h3 className="mb-2 text-lg font-semibold text-gray-900">
-                Personal Service
-              </h3>
-              <p className="text-sm leading-relaxed text-gray-600">
-                Work directly with the people doing the work. No layers of
-                account managers or outsourced teams.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
