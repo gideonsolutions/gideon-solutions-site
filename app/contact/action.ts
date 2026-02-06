@@ -1,6 +1,6 @@
 "use server";
 
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 export type ContactResult = {
   success: boolean;
@@ -20,25 +20,20 @@ export async function sendContactEmail(
     return { success: false, message: "Please fill in all required fields." };
   }
 
-  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS } = process.env;
+  const { RESEND_API_KEY } = process.env;
 
-  if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS) {
+  if (!RESEND_API_KEY) {
     return {
       success: false,
       message: "Email service is not configured. Please try again later.",
     };
   }
 
-  const transporter = nodemailer.createTransport({
-    host: SMTP_HOST,
-    port: Number(SMTP_PORT),
-    secure: Number(SMTP_PORT) === 465,
-    auth: { user: SMTP_USER, pass: SMTP_PASS },
-  });
+  const resend = new Resend(RESEND_API_KEY);
 
   try {
-    await transporter.sendMail({
-      from: `"Gideon Solutions Contact Form" <${SMTP_USER}>`,
+    await resend.emails.send({
+      from: "Gideon Solutions Contact Form <noreply@gideonsolutions.us>",
       replyTo: email,
       to: "ian@gideonsolutions.us",
       subject: `Contact Form: ${service || "General Inquiry"} — ${name}`,
