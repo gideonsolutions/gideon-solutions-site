@@ -51,20 +51,20 @@ const services = [
     icon: <WebIcon />,
   },
   {
-    title: "Custom Work",
-    description:
-      "Software engineering, data engineering, and data science solutions tailored to your unique needs.",
-    price: "Contact us",
-    href: "/services/custom-work",
-    icon: <CodeIcon />,
-  },
-  {
     title: "IT Support",
     description:
       "Corporate IT support — we prepare and configure standard Windows, Mac, and Linux machines for your team.",
     price: "Contact us",
     href: "/services/it-support",
     icon: <SupportIcon />,
+  },
+  {
+    title: "Custom Work",
+    description:
+      "Software engineering, data engineering, and data science solutions tailored to your unique needs.",
+    price: "Contact us",
+    href: "/services/custom-work",
+    icon: <CodeIcon />,
   },
 ];
 
