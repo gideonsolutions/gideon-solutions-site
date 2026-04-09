@@ -33,7 +33,7 @@ export async function sendContactEmail(
 
   try {
     await resend.emails.send({
-      from: "Gideon Solutions Contact Form <noreply@gideonsolutions.us>",
+      from: "Gideon Solutions Contact Form <noreply@mail.gideonsolutions.us>",
       replyTo: email,
       to: "ian@gideonsolutions.us",
       subject: `Contact Form: ${service || "General Inquiry"} — ${name}`,
