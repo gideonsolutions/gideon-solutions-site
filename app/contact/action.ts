@@ -13,7 +13,7 @@ export async function sendContactEmail(
 ): Promise<ContactResult> {
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
-  const service = formData.get("service") as string;
+  const interest = formData.get("interest") as string;
   const message = formData.get("message") as string;
 
   if (!name || !email || !message) {
@@ -36,11 +36,11 @@ export async function sendContactEmail(
       from: "Gideon Solutions Contact Form <noreply@mail.gideonsolutions.us>",
       replyTo: email,
       to: "ian@gideonsolutions.us",
-      subject: `Contact Form: ${service || "General Inquiry"} — ${name}`,
+      subject: `Contact Form: ${interest || "General Inquiry"} — ${name}`,
       text: [
         `Name: ${name}`,
         `Email: ${email}`,
-        `Service: ${service || "Not specified"}`,
+        `Interested in: ${interest || "Not specified"}`,
         "",
         message,
       ].join("\n"),
