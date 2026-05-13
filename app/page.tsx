@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ProductCard from "@/components/ProductCard";
 import ServiceCard from "@/components/ServiceCard";
 
 function TaxIcon() {
@@ -32,6 +33,62 @@ function SupportIcon() {
     </svg>
   );
 }
+
+function ChecklistIcon() {
+  return (
+    <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+    </svg>
+  );
+}
+
+function WalletIcon() {
+  return (
+    <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 10h18M5 6h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2zm12 7h.01" />
+    </svg>
+  );
+}
+
+function FolderIcon() {
+  return (
+    <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" />
+    </svg>
+  );
+}
+
+const products = [
+  {
+    title: "Gideon Tax",
+    description:
+      "Federal and state tax filing with transparent pricing and no hidden fees.",
+    href: "https://www.gideontax.com/",
+    icon: <TaxIcon />,
+  },
+  {
+    title: "Gideon Tasks",
+    description:
+      "An invite-only community marketplace connecting people with vetted local volunteers for errands, repairs, and tutoring.",
+    href: "https://www.gideontasks.com/",
+    icon: <ChecklistIcon />,
+  },
+  {
+    title: "Gideon Steward",
+    description:
+      "Personal finance and document management — bills, savings, and important paperwork in one place.",
+    href: "https://www.gideonsteward.com/",
+    icon: <WalletIcon />,
+  },
+  {
+    title: "Gideon Keep",
+    description:
+      "Year-round record-keeping for self-employed people and small businesses, so annual filing is simpler.",
+    href: "https://www.gideonkeep.com/",
+    status: "coming-soon" as const,
+    icon: <FolderIcon />,
+  },
+];
 
 const services = [
   {
@@ -78,12 +135,12 @@ export default function Home() {
             Gideon Solutions
           </h1>
           <p className="mb-2 text-xl text-blue-300">
-            Professional Services for Individuals &amp; Businesses
+            Products &amp; Services for Individuals &amp; Businesses
           </p>
           <p className="mx-auto mb-8 max-w-2xl text-gray-400">
-            From tax preparation to custom software, we deliver reliable,
-            high-quality solutions at transparent prices. Let us handle the
-            details so you can focus on what matters.
+            We build small, focused products and offer professional services
+            for everyday needs — tax, tasks, finances, and custom software.
+            Honest pricing, no fluff.
           </p>
           <Link
             href="/contact"
@@ -94,12 +151,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-16">
+      {/* Products Grid */}
+      <section id="products" className="bg-gray-50 py-16">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="mb-10 text-center text-3xl font-bold text-gray-900">
+          <h2 className="mb-2 text-center text-3xl font-bold text-gray-900">
+            Our Products
+          </h2>
+          <p className="mx-auto mb-10 max-w-2xl text-center text-sm text-gray-600">
+            A growing family of small tools we build and maintain.
+          </p>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {products.map((product) => (
+              <ProductCard key={product.href} {...product} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section id="services" className="py-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="mb-2 text-center text-3xl font-bold text-gray-900">
             Our Services
           </h2>
+          <p className="mx-auto mb-10 max-w-2xl text-center text-sm text-gray-600">
+            Hands-on work for individuals and businesses.
+          </p>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((service) => (
               <ServiceCard key={service.href} {...service} />
@@ -107,7 +184,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
     </>
   );
 }

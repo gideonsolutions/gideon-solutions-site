@@ -12,7 +12,7 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   title: "Gideon Solutions",
   description:
-    "Professional services for individuals and businesses — tax preparation, web development, custom software, and IT support.",
+    "Products and professional services for individuals and businesses — including Gideon Tax, Tasks, Steward, and Keep, plus tax preparation, web development, custom software, and IT support.",
 };
 
 export default function RootLayout({
