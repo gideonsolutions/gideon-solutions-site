@@ -3,6 +3,13 @@
 import { useActionState } from "react";
 import { sendContactEmail, type ContactResult } from "@/app/contact/action";
 
+const products = [
+  "Gideon Tax",
+  "Gideon Tasks",
+  "Gideon Steward",
+  "Gideon Keep",
+];
+
 const services = [
   "Tax Returns",
   "Websites",
@@ -57,20 +64,29 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="service" className="mb-1 block text-sm font-medium text-gray-700">
-          Service interested in
+        <label htmlFor="interest" className="mb-1 block text-sm font-medium text-gray-700">
+          Interested in
         </label>
         <select
-          id="service"
-          name="service"
+          id="interest"
+          name="interest"
           className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
         >
-          <option value="">Select a service</option>
-          {services.map((s) => (
-            <option key={s} value={s}>
-              {s}
-            </option>
-          ))}
+          <option value="">Select a product or service</option>
+          <optgroup label="Products">
+            {products.map((p) => (
+              <option key={p} value={p}>
+                {p}
+              </option>
+            ))}
+          </optgroup>
+          <optgroup label="Services">
+            {services.map((s) => (
+              <option key={s} value={s}>
+                {s}
+              </option>
+            ))}
+          </optgroup>
         </select>
       </div>
 
