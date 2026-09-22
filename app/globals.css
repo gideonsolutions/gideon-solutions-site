@@ -3,11 +3,16 @@
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
+  /* The brand's three fixed colours (gideon-brand/colors). */
+  --gideon-blue: #013ea9;
+  --gideon-red: #d01326;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-gideon-blue: var(--gideon-blue);
+  --color-gideon-red: var(--gideon-red);
   /* Geist, loaded in app/layout.tsx. The old sheet set Arial on <body>, which
      overrode the font the layout had loaded. */
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;

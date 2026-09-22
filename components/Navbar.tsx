@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -13,15 +14,11 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-40 border-b border-white/10 bg-slate-950/90 text-white backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-2.5 text-base font-semibold tracking-tight">
-          <span
-            aria-hidden="true"
-            className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-blue-500 to-emerald-500 text-sm font-bold text-white"
-          >
-            G
-          </span>
+    <nav className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+        <Link href="/" className="flex items-center gap-2.5 text-base font-semibold tracking-tight text-slate-900">
+          {/* The canonical mark, on white — the brand's preferred background. */}
+          <Image src="/gideon-logo.svg" alt="" width={30} height={30} priority />
           Gideon Solutions
         </Link>
 
@@ -31,7 +28,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
+              className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
             >
               {link.label}
             </Link>
@@ -40,7 +37,7 @@ export default function Navbar() {
             href="https://www.gideontax.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-md bg-white/10 px-3.5 py-1.5 text-sm font-semibold text-white ring-1 ring-white/15 transition hover:bg-white/20"
+            className="rounded-md bg-gideon-blue px-3.5 py-1.5 text-sm font-semibold text-white transition hover:bg-blue-800"
           >
             Gideon Tax<span className="sr-only"> (opens in a new tab)</span>
           </a>
@@ -49,7 +46,7 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           type="button"
-          className="rounded-md p-1 md:hidden"
+          className="rounded-md p-1 text-slate-700 md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
@@ -67,13 +64,13 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div id="mobile-menu" className="border-t border-white/10 md:hidden">
+        <div id="mobile-menu" className="border-t border-slate-200 md:hidden">
           <div className="flex flex-col gap-1 px-6 py-3">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-md px-2 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
+                className="rounded-md px-2 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:text-slate-900"
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}
