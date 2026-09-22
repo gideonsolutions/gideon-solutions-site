@@ -1,140 +1,65 @@
 import Link from "next/link";
+import { CONTACT_EMAIL, PRODUCTS } from "@/lib/products";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0f172a] text-gray-400">
-      <div className="mx-auto max-w-7xl px-6 py-12">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Company info */}
-          <div>
-            <h3 className="mb-3 text-lg font-bold text-white">
-              Gideon Solutions
-            </h3>
-            <p className="text-sm leading-relaxed">
-              Small, focused products and professional services for
-              individuals and businesses.
+    <footer className="border-t border-white/10 bg-slate-950 text-slate-400">
+      <div className="mx-auto max-w-6xl px-6 py-14">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="lg:col-span-2">
+            <p className="text-base font-semibold text-white">Gideon Solutions, LLC</p>
+            <p className="mt-3 max-w-sm text-sm leading-relaxed">
+              Honest software for taxes and money: small products with the price on
+              the page, no upsells, and a person behind each one.
             </p>
           </div>
 
-          {/* Products links */}
           <div>
-            <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-gray-300">
-              Products
-            </h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a
-                  href="https://www.gideontax.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-white"
-                >
-                  Gideon Tax
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.gideontasks.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-white"
-                >
-                  Gideon Tasks
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.gideonsteward.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-white"
-                >
-                  Gideon Steward
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.gideonkeep.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-white"
-                >
-                  Gideon Keep <span className="text-xs text-gray-500">(soon)</span>
-                </a>
-              </li>
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-300">Products</h2>
+            <ul className="mt-3 space-y-2 text-sm">
+              {PRODUCTS.map((p) => (
+                <li key={p.key}>
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-white"
+                  >
+                    {p.name}
+                    {p.status === "waitlist" && (
+                      <span className="ml-1 text-xs text-slate-500">(waitlist)</span>
+                    )}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Services links */}
           <div>
-            <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-gray-300">
-              Services
-            </h4>
-            <ul className="space-y-2 text-sm">
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-300">Company</h2>
+            <ul className="mt-3 space-y-2 text-sm">
               <li>
-                <Link
-                  href="/services/tax-returns"
-                  className="transition-colors hover:text-white"
-                >
-                  Tax Returns
+                <Link href="/#about" className="transition-colors hover:text-white">
+                  How we work
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/services/websites"
-                  className="transition-colors hover:text-white"
-                >
-                  Websites
+                <Link href="/contact" className="transition-colors hover:text-white">
+                  Contact
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/services/it-support"
-                  className="transition-colors hover:text-white"
-                >
-                  IT Support
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/custom-work"
-                  className="transition-colors hover:text-white"
-                >
-                  Custom Work
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-gray-300">
-              Contact
-            </h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a
-                  href="mailto:ian@gideonsolutions.us"
-                  className="transition-colors hover:text-white"
-                >
-                  ian@gideonsolutions.us
+                <a href={`mailto:${CONTACT_EMAIL}`} className="transition-colors hover:text-white">
+                  {CONTACT_EMAIL}
                 </a>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="transition-colors hover:text-white"
-                >
-                  Contact Page
-                </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-gray-700 pt-6 text-center text-sm">
-          &copy; {new Date().getFullYear()} Gideon Solutions. All rights
-          reserved.
+        <div className="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-sm sm:flex-row sm:items-center sm:justify-between">
+          <p>&copy; {new Date().getFullYear()} Gideon Solutions, LLC. All rights reserved.</p>
+          <p className="text-slate-500">God bless.</p>
         </div>
       </div>
     </footer>
