@@ -76,6 +76,20 @@ export const PRODUCTS: readonly Product[] = [
   },
 ] as const;
 
-/** The company's contact address, single-sourced. */
+/* ── How to reach a person ────────────────────────────────────────────────────
+ * The same facts the product sites publish (their source of record is
+ * gideon-tax-site's packages/shared/src/contact.ts). Publishing the address is
+ * deliberate: a company that files people's taxes should be willing to say
+ * where it is.
+ */
+export const LEGAL_ENTITY = "Gideon Solutions, LLC";
+export const CONTACT_NAME = "Ian Joiner";
 export const CONTACT_EMAIL = "ian@gideonsolutions.us";
+export const ADDRESS = {
+  street1: "1324 Colgher St",
+  city: "Charlotte",
+  state: "NC",
+  zip: "28227",
+} as const;
+export const ADDRESS_ONE_LINE = `${ADDRESS.street1}, ${ADDRESS.city}, ${ADDRESS.state} ${ADDRESS.zip}`;
 export const SITE_URL = "https://gideonsolutions.us";

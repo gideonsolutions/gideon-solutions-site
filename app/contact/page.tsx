@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
-import { CONTACT_EMAIL } from "@/lib/products";
+import { ADDRESS, CONTACT_EMAIL, CONTACT_NAME, LEGAL_ENTITY } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -11,7 +11,7 @@ export default function ContactPage() {
   return (
     <div className="bg-slate-50 py-16 sm:py-20">
       <div className="mx-auto max-w-3xl px-6">
-        <p className="text-sm font-semibold uppercase tracking-wider text-blue-700">Contact</p>
+        <p className="text-sm font-semibold uppercase tracking-wider text-gideon-blue">Contact</p>
         <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
           Write to us.
         </h1>
@@ -24,13 +24,26 @@ export default function ContactPage() {
           <ContactForm />
         </div>
 
-        <p className="mt-6 text-sm text-slate-500">
-          Or email{" "}
-          <a href={`mailto:${CONTACT_EMAIL}`} className="font-medium text-blue-700 hover:underline">
-            {CONTACT_EMAIL}
-          </a>
-          . For help inside a product, the product&rsquo;s own site has its contact page too.
-        </p>
+        <div className="mt-8 grid gap-6 text-sm text-slate-600 sm:grid-cols-2">
+          <div>
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500">Email</h2>
+            <a href={`mailto:${CONTACT_EMAIL}`} className="mt-2 block font-medium text-gideon-blue hover:underline">
+              {CONTACT_EMAIL}
+            </a>
+            <p className="mt-2">For help inside a product, its own site has a contact page too.</p>
+          </div>
+          <div>
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500">Post</h2>
+            <address className="mt-2 not-italic leading-relaxed">
+              <span className="block font-medium text-slate-800">{CONTACT_NAME}</span>
+              <span className="block">{LEGAL_ENTITY}</span>
+              <span className="block">{ADDRESS.street1}</span>
+              <span className="block">
+                {ADDRESS.city}, {ADDRESS.state} {ADDRESS.zip}
+              </span>
+            </address>
+          </div>
+        </div>
       </div>
     </div>
   );

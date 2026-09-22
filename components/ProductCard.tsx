@@ -23,14 +23,14 @@ export default function ProductCard({ product, featured = false }: { product: Pr
           </span>
         )}
       </div>
-      <h3 className={`font-semibold tracking-tight text-slate-900 group-hover:text-blue-700 ${featured ? "text-2xl" : "text-lg"}`}>
+      <h3 className={`font-semibold tracking-tight text-slate-900 group-hover:text-gideon-blue ${featured ? "text-2xl" : "text-lg"}`}>
         {product.name}
       </h3>
       <p className="mt-1 text-sm font-medium text-slate-600">{product.tagline}</p>
       <p className={`mt-3 flex-1 leading-relaxed text-slate-600 ${featured ? "max-w-xl text-base" : "text-sm"}`}>
         {product.description}
       </p>
-      <p className="mt-5 text-sm font-semibold text-blue-700">
+      <p className="mt-5 text-sm font-semibold text-gideon-blue">
         {waitlist ? "Join the waitlist" : "Open " + product.name}
         <span aria-hidden="true" className="ml-1 inline-block transition-transform group-hover:translate-x-0.5">
           →

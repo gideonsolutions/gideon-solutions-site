@@ -26,24 +26,22 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative isolate overflow-hidden bg-slate-950 text-white">
+      <section className="relative isolate overflow-hidden bg-gideon-blue text-white">
+        {/* A single soft highlight on the brand blue — plain enough that the
+            mark could sit on it, though the mark lives in the nav. */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60rem_40rem_at_50%_-10rem,rgba(59,130,246,0.35),transparent_60%),radial-gradient(40rem_30rem_at_90%_110%,rgba(16,185,129,0.18),transparent_60%)]"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.35] [background-image:linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:3rem_3rem] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
+          className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(70rem_40rem_at_20%_-10rem,rgba(255,255,255,0.16),transparent_60%),radial-gradient(50rem_30rem_at_100%_110%,rgba(0,0,0,0.25),transparent_60%)]"
         />
         <div className="mx-auto max-w-5xl px-6 py-24 sm:py-32">
-          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-blue-100">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
+          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium text-blue-50">
+            <span className="h-1.5 w-1.5 rounded-full bg-white" aria-hidden="true" />
             {live} products live · one in development
           </p>
           <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
             Honest software for taxes and money.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-blue-50/90">
             Gideon Solutions builds small, plain products that do one thing well:
             e-file a return, keep a tax record, watch the household money, find a
             trustworthy pair of hands. Prices stated up front. No upsells. A person
@@ -52,13 +50,13 @@ export default function Home() {
           <div className="mt-10 flex flex-wrap gap-3">
             <a
               href="#products"
-              className="rounded-lg bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-blue-50"
+              className="rounded-lg bg-white px-6 py-3 text-sm font-semibold text-gideon-blue shadow-sm transition hover:bg-blue-50"
             >
               See the products
             </a>
             <Link
               href="/contact"
-              className="rounded-lg border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              className="rounded-lg border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
             >
               Talk to us
             </Link>
@@ -70,7 +68,7 @@ export default function Home() {
       <section id="products" className="scroll-mt-20 bg-slate-50 py-20">
         <div className="mx-auto max-w-6xl px-6">
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-wider text-blue-700">Products</p>
+            <p className="text-sm font-semibold uppercase tracking-wider text-gideon-blue">Products</p>
             <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
               A small family of tools, each with a job.
             </h2>
@@ -93,7 +91,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-blue-700">How we work</p>
+              <p className="text-sm font-semibold uppercase tracking-wider text-gideon-blue">How we work</p>
               <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
                 Plain prices, plain words, and a person who answers.
               </h2>
@@ -103,7 +101,7 @@ export default function Home() {
               </p>
               <p className="mt-6 text-sm text-slate-500">
                 Questions, a bug, or a form you wish we filed?{" "}
-                <a href={`mailto:${CONTACT_EMAIL}`} className="font-medium text-blue-700 hover:underline">
+                <a href={`mailto:${CONTACT_EMAIL}`} className="font-medium text-gideon-blue hover:underline">
                   {CONTACT_EMAIL}
                 </a>
               </p>
@@ -133,7 +131,7 @@ export default function Home() {
           </div>
           <Link
             href="/contact"
-            className="rounded-lg bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
+            className="rounded-lg bg-gideon-blue px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-800"
           >
             Get in touch
           </Link>
