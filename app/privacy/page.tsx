@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ADDRESS, CONTACT_EMAIL, LEGAL_ENTITY, PRODUCTS } from "@/lib/products";
+import { ADDRESS, CONTACT_EMAIL, LEGAL_ENTITY, PRODUCTS, isExternal } from "@/lib/products";
+
+/** Only a product with a site of its own has a privacy policy of its own. */
+const SITED = PRODUCTS.filter(isExternal);
 
 export const metadata: Metadata = {
   title: "Privacy",
@@ -26,12 +29,12 @@ export default function PrivacyPage() {
               This is the company site of {LEGAL_ENTITY}. It describes our products and lets you write to
               us. It has no accounts, takes no payments, and holds no tax data. Each product runs on its
               own site with its own privacy policy, which governs what you do there:{" "}
-              {PRODUCTS.map((p, i) => (
+              {SITED.map((p, i) => (
                 <span key={p.key}>
                   <a href={p.href} className="text-gideon-blue hover:underline" target="_blank" rel="noopener noreferrer">
                     {p.name}
                   </a>
-                  {i < PRODUCTS.length - 1 ? ", " : "."}
+                  {i < SITED.length - 1 ? ", " : "."}
                 </span>
               ))}
             </p>

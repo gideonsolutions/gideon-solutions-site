@@ -23,6 +23,7 @@ const principles = [
 
 export default function Home() {
   const live = PRODUCTS.filter((p) => p.status === "live").length;
+  const building = PRODUCTS.filter((p) => p.status !== "live").length;
   return (
     <>
       {/* Hero */}
@@ -36,7 +37,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-6 py-24 sm:py-32">
           <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium text-blue-50">
             <span className="h-1.5 w-1.5 rounded-full bg-white" aria-hidden="true" />
-            {live} products live · one in development
+            {live} products live{building > 0 && ` · ${building === 1 ? "one" : building} in development`}
           </p>
           <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
             Honest software for taxes and money.

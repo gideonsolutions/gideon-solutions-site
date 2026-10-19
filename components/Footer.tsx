@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ADDRESS, CONTACT_EMAIL, CONTACT_NAME, LEGAL_ENTITY, PRODUCTS } from "@/lib/products";
+import { ADDRESS, CONTACT_EMAIL, CONTACT_NAME, LEGAL_ENTITY, PRODUCTS, isExternal } from "@/lib/products";
 
 export default function Footer() {
   return (
@@ -31,13 +31,15 @@ export default function Footer() {
                 <li key={p.key}>
                   <a
                     href={p.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...(isExternal(p) ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     className="transition-colors hover:text-slate-900"
                   >
                     {p.name}
                     {p.status === "waitlist" && (
                       <span className="ml-1 text-xs text-slate-400">(waitlist)</span>
+                    )}
+                    {p.status === "development" && (
+                      <span className="ml-1 text-xs text-slate-400">(in development)</span>
                     )}
                   </a>
                 </li>

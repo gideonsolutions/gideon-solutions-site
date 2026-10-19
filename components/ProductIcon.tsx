@@ -52,6 +52,16 @@ export default function ProductIcon({ productKey }: { productKey: string }) {
           <path d="M9 6h11M9 12h11M9 18h11" />
         </svg>
       );
+    case "lantern":
+      // A lantern: a hanging ring, a cap, the glass, a flame.
+      return (
+        <svg {...common}>
+          <path d="M12 2.5v2" />
+          <path d="M8 7l1.5-2.5h5L16 7z" />
+          <path d="M8 7h8v11a1.5 1.5 0 01-1.5 1.5h-5A1.5 1.5 0 018 18z" />
+          <path d="M12 10.5c1.2 1.2 1.2 3 0 4.2-1.2-1.2-1.2-3 0-4.2z" />
+        </svg>
+      );
     default:
       return (
         <svg {...common}>
