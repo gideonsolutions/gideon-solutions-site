@@ -7,7 +7,13 @@
  * they carry no prices, because prices live on the product sites and drift.
  */
 
-export type ProductStatus = "live" | "waitlist";
+/**
+ * live        — open to the public on its own site
+ * waitlist    — its own site is up, taking names
+ * development — being built; no site of its own yet, so its card points at
+ *               the contact page
+ */
+export type ProductStatus = "live" | "waitlist" | "development";
 
 export interface Product {
   /** URL slug used for anchors and keys. */
@@ -17,6 +23,7 @@ export interface Product {
   tagline: string;
   /** Two or three sentences — who it is for and what it does. */
   description: string;
+  /** The product's own site, or a path on this one while it has none. */
   href: string;
   status: ProductStatus;
   /** Tailwind classes for the card's accent (icon tile + hover ring). */
@@ -49,9 +56,9 @@ export const PRODUCTS: readonly Product[] = [
     name: "Gideon Keep",
     tagline: "The durable memory of your tax life",
     description:
-      "Tax forms are temporary; your tax history shouldn't be. Keep retains, verifies and structures the facts, documents, relationships and carryforwards a return is built from, so each January starts from what is already known. In development, alongside Gideon Tax; the waitlist is open.",
+      "Tax forms are temporary; your tax history shouldn't be. Keep retains, verifies and structures the facts, documents, relationships and carryforwards a return is built from, so each January starts from what is already known. Open in early access, and free for now.",
     href: "https://www.gideonkeep.com/",
-    status: "waitlist",
+    status: "live",
     accent: "bg-emerald-600",
   },
   {
@@ -74,7 +81,20 @@ export const PRODUCTS: readonly Product[] = [
     status: "live",
     accent: "bg-rose-600",
   },
+  {
+    key: "lantern",
+    name: "Gideon Lantern",
+    tagline: "Keep the light on, even when you cannot",
+    description:
+      "A weekly “Are you okay?” email. If you stop answering, and the reminders go unanswered too, the private message you prepared goes once to the people you chose. Continuity instructions for an emergency — not a will, and not proof of anything. In development.",
+    href: "/contact",
+    status: "development",
+    accent: "bg-sky-700",
+  },
 ] as const;
+
+/** Whether a product's link leaves this site (and so opens in a new tab). */
+export const isExternal = (p: Product) => /^https?:\/\//.test(p.href);
 
 /* ── How to reach a person ────────────────────────────────────────────────────
  * The same facts the product sites publish (their source of record is
