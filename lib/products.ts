@@ -86,9 +86,9 @@ export const PRODUCTS: readonly Product[] = [
     name: "Gideon Lantern",
     tagline: "Keep the light on, even when you cannot",
     description:
-      "A weekly “Are you okay?” email. If you stop answering, and the reminders go unanswered too, the private message you prepared goes once to the people you chose. Continuity instructions for an emergency — not a will, and not proof of anything. In development.",
-    href: "/contact",
-    status: "development",
+      "A weekly “Are you okay?” email. If you stop answering, and the reminders go unanswered too, the private message you prepared goes once to the people you chose. Continuity instructions for an emergency — not a will, and not proof of anything.",
+    href: "https://gideonlantern.com/",
+    status: "live",
     accent: "bg-sky-700",
   },
 ] as const;
