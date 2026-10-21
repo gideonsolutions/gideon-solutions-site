@@ -62,6 +62,15 @@ export default function ProductIcon({ productKey }: { productKey: string }) {
           <path d="M12 10.5c1.2 1.2 1.2 3 0 4.2-1.2-1.2-1.2-3 0-4.2z" />
         </svg>
       );
+    case "books":
+      // An open ledger: two facing pages, a column rule on each.
+      return (
+        <svg {...common}>
+          <path d="M3 5.5A1.5 1.5 0 014.5 4H10a2 2 0 012 2v13a2 2 0 00-2-2H3z" />
+          <path d="M21 5.5A1.5 1.5 0 0019.5 4H14a2 2 0 00-2 2v13a2 2 0 012-2h7z" />
+          <path d="M6 8.5h3M6 11.5h3M15 8.5h3M15 11.5h3" />
+        </svg>
+      );
     default:
       return (
         <svg {...common}>

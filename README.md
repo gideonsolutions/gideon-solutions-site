@@ -15,6 +15,9 @@ from there by the home page, the footer, the contact form and the sitemap:
 - **Gideon Lantern** — a weekly check-in that releases a prepared message if
   you stop answering (in development; its card points at the contact form
   until it has a site of its own)
+- **Gideon Books** — open-source double-entry accounting for a small business
+  and its accountant (in development; its card points at the contact form
+  until it has a site of its own)
 
 The consulting-era service pages (`/services/*`) are gone; they redirect to `/`.
 

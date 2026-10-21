@@ -91,6 +91,16 @@ export const PRODUCTS: readonly Product[] = [
     status: "live",
     accent: "bg-sky-700",
   },
+  {
+    key: "books",
+    name: "Gideon Books",
+    tagline: "Open-source accounting for a small business and its accountant",
+    description:
+      "Double-entry books from the first invoice to the period close: sales and bills, bank reconciliation, inventory, fixed assets, payroll import, sales tax and multiple currencies, with every total traceable to its transactions. The core is open source and runs on your own server; a hosted version is planned.",
+    href: "/contact",
+    status: "development",
+    accent: "bg-teal-700",
+  },
 ] as const;
 
 /** Whether a product's link leaves this site (and so opens in a new tab). */
