@@ -15,7 +15,7 @@ from there by the home page, the footer, the contact form and the sitemap:
 - **Gideon Lantern** — a weekly check-in that releases a prepared message if
   you stop answering ([gideonlantern.com](https://gideonlantern.com))
 - **Gideon Hearth** — payroll and year-end paperwork for North Carolina families
-  who employ someone in their home ([gideon-hearth.vercel.app](https://gideon-hearth.vercel.app))
+  who employ someone in their home ([gideonhearth.com](https://www.gideonhearth.com))
 - **Gideon Books** — open-source double-entry accounting for a small business
   and its accountant (in development; its card points at the contact form
   until it has a site of its own)
