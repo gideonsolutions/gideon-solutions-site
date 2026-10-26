@@ -13,8 +13,7 @@ from there by the home page, the footer, the contact form and the sitemap:
 - **Gideon Steward** — household money, bills, documents and deadlines
 - **Gideon Tasks** — a vouched-for community task marketplace
 - **Gideon Lantern** — a weekly check-in that releases a prepared message if
-  you stop answering (in development; its card points at the contact form
-  until it has a site of its own)
+  you stop answering ([gideonlantern.com](https://gideonlantern.com))
 - **Gideon Books** — open-source double-entry accounting for a small business
   and its accountant (in development; its card points at the contact form
   until it has a site of its own)
