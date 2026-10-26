@@ -92,6 +92,16 @@ export const PRODUCTS: readonly Product[] = [
     accent: "bg-sky-700",
   },
   {
+    key: "hearth",
+    name: "Gideon Hearth",
+    tagline: "Payroll for the person who works in your home",
+    description:
+      "For North Carolina families who employ a nanny, a caregiver or a housekeeper: every payday worked out with its pay stub, the unemployment reports each quarter, and the W-2 and Schedule H at year end. Your records never leave your browser. The check and the payday calculator are open now; the year-end paperwork opens at launch.",
+    href: "https://gideon-hearth.vercel.app/",
+    status: "live",
+    accent: "bg-orange-700",
+  },
+  {
     key: "books",
     name: "Gideon Books",
     tagline: "Open-source accounting for a small business and its accountant",
