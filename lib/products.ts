@@ -36,7 +36,7 @@ export const PRODUCTS: readonly Product[] = [
     name: "Gideon Tax",
     tagline: "Honest IRS e-file for businesses and tax professionals",
     description:
-      "Excise returns (Forms 2290, 720 and 8849), the employment-tax series (Forms 940–945), information returns and more, e-filed straight to the IRS. Prices are stated before you start, every return is checked before you pay, and a person reviews what the software cannot.",
+      "Excise returns (Forms 2290, 720 and 8849), the employment-tax series (Forms 940–945) and more, e-filed straight to the IRS, with information returns on the way. Prices are stated before you start, every return is checked before you pay, and a person reviews what the software cannot.",
     href: "https://www.gideontax.com/",
     status: "live",
     accent: "bg-blue-600",

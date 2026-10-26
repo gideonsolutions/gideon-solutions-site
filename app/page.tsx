@@ -98,7 +98,10 @@ export default function Home() {
               </h2>
               <p className="mt-4 text-base leading-relaxed text-slate-600">
                 We are a small software company, not a consultancy. What we sell is
-                the products above; nothing is billed by the hour.
+                the products above, each at the price it states before you start. The
+                one exception is the Enrolled Agent work at Gideon Tax: consultations
+                and IRS representation are billed by the hour, at the rates its page
+                states, with an estimate first.
               </p>
               <p className="mt-6 text-sm text-slate-500">
                 Questions, a bug, or a form you wish we filed?{" "}
