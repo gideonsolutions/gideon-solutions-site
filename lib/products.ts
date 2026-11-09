@@ -116,9 +116,9 @@ export const PRODUCTS: readonly Product[] = [
     name: "Alice",
     tagline: "She knows who you should talk to",
     description:
-      "An invitation-only salon for founders, mathematicians, scientists, engineers and independent scholars. Talk privately with Alice about an unfinished problem; when someone else's work might help, she proposes an introduction that happens only if both of you approve exactly what is shared.",
-    href: "/contact",
-    status: "development",
+      "A salon for founders, mathematicians, scientists, engineers and independent scholars. Talk privately with Alice about an unfinished problem; when someone else's work might help, she proposes an introduction that happens only if both of you approve exactly what is shared. Free to join.",
+    href: "https://withalice.app/",
+    status: "live",
     accent: "bg-stone-700",
   },
 ] as const;
