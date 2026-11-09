@@ -19,6 +19,10 @@ from there by the home page, the footer, the contact form and the sitemap:
 - **Gideon Books** — open-source double-entry accounting for a small business
   and its accountant (in development; its card points at the contact form
   until it has a site of its own)
+- **Alice** — an invitation-only salon that introduces founders, mathematicians,
+  scientists and engineers whose work might help each other, only with both
+  people's consent (in development; its card points at the contact form until
+  [withalice.app](https://withalice.app) opens)
 
 The consulting-era service pages (`/services/*`) are gone; they redirect to `/`.
 
