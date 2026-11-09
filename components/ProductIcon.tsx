@@ -71,6 +71,16 @@ export default function ProductIcon({ productKey }: { productKey: string }) {
           <path d="M12 18c-1.4 0-2.4-1-2.4-2.3 0-1.4 1.4-2.1 2.4-3.6 1 1.5 2.4 2.2 2.4 3.6 0 1.3-1 2.3-2.4 2.3z" />
         </svg>
       );
+    case "alice":
+      // A cat's head: Alice, the salon's hostess.
+      return (
+        <svg {...common}>
+          <path d="M5 11V4.5l4 3h6l4-3V11" />
+          <path d="M5 11a7 7 0 0014 0" />
+          <path d="M9.5 12h.01M14.5 12h.01" />
+          <path d="M11 15l1 .8 1-.8" />
+        </svg>
+      );
     case "books":
       // An open ledger: two facing pages, a column rule on each.
       return (
