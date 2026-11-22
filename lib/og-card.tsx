@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { GIDEON_LOGO_PNG_BASE64 } from "@/lib/logo-png";
+import { PRODUCTS } from "@/lib/products";
 
 /**
  * The social share card (1200×630), used by app/opengraph-image.tsx and
@@ -43,7 +44,7 @@ export function renderOgCard() {
             Honest software for taxes and money.
           </div>
           <div style={{ fontSize: 32, color: "#dbe7ff" }}>
-            Gideon Tax · Gideon Trucker Tax · Gideon Keep · Gideon Steward · Gideon Tasks
+            {PRODUCTS.map((p) => p.name).join(" · ")}
           </div>
         </div>
 

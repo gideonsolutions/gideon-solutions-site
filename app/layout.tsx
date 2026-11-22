@@ -3,7 +3,7 @@ import { Geist } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { SITE_URL } from "@/lib/products";
+import { PRODUCTS, SITE_URL } from "@/lib/products";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -11,8 +11,9 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const description =
-  "Gideon Solutions builds honest software for taxes and money: Gideon Tax and Gideon Trucker Tax (IRS e-file), Gideon Keep, Gideon Steward and Gideon Tasks. Prices stated up front, no upsells, a person behind each one.";
+// Named from the product list, so a new product cannot be left out of it.
+const names = PRODUCTS.map((p) => p.name);
+const description = `Gideon Solutions builds honest software for taxes and money: ${names.slice(0, -1).join(", ")} and ${names.at(-1)}. Prices stated up front, no upsells, a person behind each one.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

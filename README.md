@@ -7,11 +7,12 @@ Gideon Solutions, LLC builds software for taxes and money. The products, each on
 its own site once it has one, are listed once in [`lib/products.ts`](lib/products.ts) and read
 from there by the home page, the footer, the contact form and the sitemap:
 
-- **Gideon Tax** — IRS e-file for businesses and tax professionals
+- **Gideon Tax** — IRS e-file for individuals, businesses and tax professionals
 - **Gideon Trucker Tax** — Form 2290 and Schedule 6 refunds for truckers
 - **Gideon Keep** — the durable memory of a taxpayer's history (early access)
 - **Gideon Steward** — household money, bills, documents and deadlines
-- **Gideon Tasks** — a vouched-for community task marketplace
+- **Gideon Tasks** — a task marketplace open to anyone in the US, where
+  Gideon Clerk (paperwork help from Gideon Solutions itself) is booked too
 - **Gideon Lantern** — a weekly check-in that releases a prepared message if
   you stop answering ([gideonlantern.com](https://gideonlantern.com))
 - **Gideon Hearth** — payroll and year-end paperwork for North Carolina families
