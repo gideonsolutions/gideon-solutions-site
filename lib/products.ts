@@ -34,9 +34,9 @@ export const PRODUCTS: readonly Product[] = [
   {
     key: "tax",
     name: "Gideon Tax",
-    tagline: "Honest IRS e-file for businesses and tax professionals",
+    tagline: "Honest IRS e-file for individuals, businesses and tax professionals",
     description:
-      "Excise returns (Forms 2290, 720 and 8849), the employment-tax series (Forms 940–945) and more, e-filed straight to the IRS, with information returns on the way. Prices are stated before you start, every return is checked before you pay, and a person reviews what the software cannot.",
+      "The individual return (Form 1040), the excise returns (Forms 2290, 720 and 8849), the employment-tax series (Forms 940–945) and more, e-filed straight to the IRS, with information returns on the way. Prices are stated before you start, every return is checked before you pay, and a person reviews what the software cannot.",
     href: "https://www.gideontax.com/",
     status: "live",
     accent: "bg-blue-600",
@@ -46,7 +46,7 @@ export const PRODUCTS: readonly Product[] = [
     name: "Gideon Trucker Tax",
     tagline: "Form 2290 and Schedule 6 refunds, for truckers, in English and Spanish",
     description:
-      "The Heavy Highway Vehicle Use Tax without the upsells: file Form 2290, get your stamped Schedule 1, renew next year for a dollar a truck, and claim a Form 8849 refund when a truck is sold, destroyed, stolen or driven under the mileage limit.",
+      "The Heavy Highway Vehicle Use Tax without the upsells: file Form 2290, get your stamped Schedule 1, renew next year in one click, and claim a Form 8849 refund when a truck is sold, destroyed, stolen or driven under the mileage limit.",
     href: "https://www.gideontruckertax.com/",
     status: "live",
     accent: "bg-amber-600",
@@ -76,7 +76,7 @@ export const PRODUCTS: readonly Product[] = [
     name: "Gideon Tasks",
     tagline: "A trustworthy task marketplace for your community",
     description:
-      "An invite-only marketplace for everyday work — errands, repairs, tutoring, tax prep. Doers are vouched for by their local church, nonprofit or community organization; payments are held in escrow through Stripe, under one transparent fee that falls as the community grows.",
+      "A marketplace for everyday work — errands, repairs, tutoring, tax prep — open to anyone in the US. Sign up and confirm your email address; Stripe checks your card when you book someone, and your identity before you take on work. Payments are held in escrow under one published fee that falls as the community grows, and Gideon Clerk, our own help with forms, applications and online accounts, is booked there too.",
     href: "https://www.gideontasks.com/",
     status: "live",
     accent: "bg-rose-600",
@@ -96,7 +96,7 @@ export const PRODUCTS: readonly Product[] = [
     name: "Gideon Hearth",
     tagline: "Payroll for the person who works in your home",
     description:
-      "For North Carolina families who employ a nanny, a caregiver or a housekeeper: every payday worked out with its pay stub, the unemployment reports each quarter, and the W-2 and Schedule H at year end. Your records never leave your browser. The check and the payday calculator are open now; the year-end paperwork opens at launch.",
+      "For North Carolina families who employ a nanny, a caregiver or a housekeeper: every payday worked out with its pay stub, the unemployment reports each quarter, and the W-2 and Schedule H at year end. Your records never leave your browser. The check and the payday calculator are free, and the quarterly and year-end paperwork is available now, with one payment per household for each tax year.",
     href: "https://www.gideonhearth.com/",
     status: "live",
     accent: "bg-orange-700",
