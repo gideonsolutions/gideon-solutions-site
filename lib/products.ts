@@ -121,6 +121,16 @@ export const PRODUCTS: readonly Product[] = [
     status: "live",
     accent: "bg-stone-700",
   },
+  {
+    key: "professionals",
+    name: "Gideon for Professionals",
+    tagline: "Software made for your business, one business at a time",
+    description:
+      "Local small businesses and independent contractors bring a problem — booking customers, quotes and invoices, a spreadsheet that outgrew itself — and we build the tool for it, using AI to work quickly and a person to check every piece. New, starting at Gideon Open Day in Charlotte; every project is quoted in writing before work starts.",
+    href: "/professionals",
+    status: "development",
+    accent: "bg-indigo-700",
+  },
 ] as const;
 
 /** Whether a product's link leaves this site (and so opens in a new tab). */

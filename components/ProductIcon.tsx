@@ -90,6 +90,15 @@ export default function ProductIcon({ productKey }: { productKey: string }) {
           <path d="M6 8.5h3M6 11.5h3M15 8.5h3M15 11.5h3" />
         </svg>
       );
+    case "professionals":
+      // A briefcase holding code: software made for one business.
+      return (
+        <svg {...common}>
+          <path d="M3.5 8h17v11h-17z" />
+          <path d="M9 8V5.5h6V8" />
+          <path d="M10 12l-2 2 2 2M14 12l2 2-2 2" />
+        </svg>
+      );
     default:
       return (
         <svg {...common}>

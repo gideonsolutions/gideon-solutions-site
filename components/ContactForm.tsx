@@ -3,6 +3,7 @@
 import { Turnstile } from "@marsidev/react-turnstile";
 import { useActionState, useState } from "react";
 import { sendContactEmail, type ContactResult } from "@/app/contact/action";
+import { OPEN_DAY_TOPIC } from "@/lib/open-day";
 import { PRODUCTS } from "@/lib/products";
 
 /** Set on the Vercel project when the Turnstile widget exists; absent, the form still works (see action.ts). */
@@ -11,7 +12,14 @@ const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 const inputClass =
   "w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 shadow-sm placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30";
 
-export default function ContactForm() {
+export default function ContactForm({
+  defaultInterest = "",
+  messagePlaceholder,
+}: {
+  /** The "About" choice to start on, e.g. the Open Day RSVP from /contact?about=open-day. */
+  defaultInterest?: string;
+  messagePlaceholder?: string;
+}) {
   const [state, formAction, pending] = useActionState<ContactResult | null, FormData>(
     sendContactEmail,
     null,
@@ -60,13 +68,14 @@ export default function ContactForm() {
         <label htmlFor="interest" className="mb-1.5 block text-sm font-medium text-slate-700">
           About
         </label>
-        <select id="interest" name="interest" className={inputClass} defaultValue="">
+        <select id="interest" name="interest" className={inputClass} defaultValue={defaultInterest}>
           <option value="">Choose a product, or leave it blank</option>
           {PRODUCTS.map((p) => (
             <option key={p.key} value={p.name}>
               {p.name}
             </option>
           ))}
+          <option value={OPEN_DAY_TOPIC}>Gideon Open Day (RSVP)</option>
           <option value="Something else">Something else</option>
         </select>
       </div>
@@ -75,7 +84,14 @@ export default function ContactForm() {
         <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-slate-700">
           Message <span className="text-red-600">*</span>
         </label>
-        <textarea id="message" name="message" rows={6} required className={inputClass} />
+        <textarea
+          id="message"
+          name="message"
+          rows={6}
+          required
+          placeholder={messagePlaceholder}
+          className={inputClass}
+        />
       </div>
 
       {TURNSTILE_SITE_KEY && (
