@@ -138,8 +138,8 @@ export default function Home() {
                 above, each at the price it states before you start. Two things are made
                 to order: the Enrolled Agent work at Gideon Tax, where consultations and
                 IRS representation are billed by the hour at the rates its page states,
-                with an estimate first; and Gideon for Professionals, software built for
-                one business at a time and quoted in writing before any work starts.
+                with an estimate first; and the custom software and AI solutions of Gideon
+                for Professionals, quoted in writing before any work starts.
               </p>
               <p className="mt-6 text-sm text-slate-500">
                 Questions, a bug, or a form you wish we filed?{" "}

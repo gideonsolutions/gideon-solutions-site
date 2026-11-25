@@ -124,9 +124,9 @@ export const PRODUCTS: readonly Product[] = [
   {
     key: "professionals",
     name: "Gideon for Professionals",
-    tagline: "Software made for your business, one business at a time",
+    tagline: "Custom software, AI solutions and ready-made tools for small businesses",
     description:
-      "Local small businesses and independent contractors bring a problem — booking customers, quotes and invoices, a spreadsheet that outgrew itself — and we build the tool for it, using AI to work quickly and a person to check every piece. New, starting at Gideon Open Day in Charlotte; every project is quoted in writing before work starts.",
+      "For local small businesses and independent contractors: software made for one business, AI solutions that take on the repetitive work, and ready-made tools for the needs many businesses share. New, starting at Gideon Open Day in Charlotte; custom work is quoted in writing before it starts.",
     href: "/professionals",
     status: "development",
     accent: "bg-indigo-700",

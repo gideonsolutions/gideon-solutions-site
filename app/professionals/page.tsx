@@ -7,7 +7,7 @@ export const revalidate = 3600;
 
 const title = "Gideon for Professionals";
 const description =
-  "Software made for one business at a time: local small businesses and independent contractors bring a problem, and we build the tool for it. Quoted in writing before any work starts.";
+  "Software and AI for small businesses and independent contractors: custom software made for one business, AI solutions that take on repetitive work, and ready-made tools for the needs many businesses share.";
 
 export const metadata: Metadata = {
   title,
@@ -16,13 +16,39 @@ export const metadata: Metadata = {
   openGraph: { type: "website", siteName: "Gideon Solutions", title, description, url: "/professionals" },
 };
 
-const examples = [
-  "Booking and reminders for your customers",
-  "Quotes and invoices that look like your business",
-  "Keeping track of jobs, crews and materials",
-  "Turning a spreadsheet that outgrew itself into a real tool",
-  "A simple website people can find",
-  "Connecting the apps you already use so you stop retyping",
+const ways = [
+  {
+    title: "Made for you",
+    lead: "Custom software for one business.",
+    body: "Most software is built for millions of customers, so you bend your work to fit it. This is built around the way you already work.",
+    examples: [
+      "Booking and reminders for your customers",
+      "Quotes and invoices that look like your business",
+      "Keeping track of jobs, crews and materials",
+      "A spreadsheet that outgrew itself, turned into a real tool",
+      "A simple website people can find",
+    ],
+  },
+  {
+    title: "AI solutions",
+    lead: "AI that takes on the repetitive work.",
+    body: "For the jobs that are mostly reading and writing, with a person in your business deciding what goes out.",
+    examples: [
+      "Drafting replies, quotes and follow-ups for you to approve",
+      "Reading receipts, forms and documents into your records",
+      "Answering your customers' common questions",
+      "Sorting and summarizing the inbox",
+    ],
+  },
+  {
+    title: "Ready-made tools",
+    lead: "One tool for a need many businesses share.",
+    body: "When the same problem keeps coming up, we build it once, properly, as a product anyone can use, with the price on the page like everything else we make.",
+    examples: [
+      "Built from what we learn at Open Days and in custom work",
+      "Listed on gideonsolutions.us as each one opens",
+    ],
+  },
 ];
 
 const how = [
@@ -32,15 +58,15 @@ const how = [
   },
   {
     title: "A written quote first",
-    body: "Before any work starts, you get a quote in writing: what will be built and what it costs. Nothing is added later without your yes.",
+    body: "Custom software and AI solutions are quoted in writing before any work starts: what will be built and what it costs. Nothing is added later without your yes.",
   },
   {
     title: "Built with you",
     body: "We use AI tools to build quickly, and a person checks every piece. You try it as it takes shape, so it fits the way you actually work.",
   },
   {
-    title: "Ordinary software",
-    body: "What you get is plain software that does its job, with no AI fees built into running it.",
+    title: "Running costs in plain sight",
+    body: "Plain software has no AI fees. When a solution uses AI while it runs, the quote says what that costs, before you agree to anything.",
   },
 ];
 
@@ -54,12 +80,12 @@ export default function ProfessionalsPage() {
             Gideon for Professionals · New
           </p>
           <h1 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
-            Software made for your business, not the other way around.
+            Software and AI that work the way your business does.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-blue-50/90">
-            Most software is built for millions of customers, so you bend your work to fit it.
-            Gideon for Professionals builds for one business at a time: local small businesses
-            and independent contractors bring a problem, and we build the tool that solves it.
+            For local small businesses and independent contractors, in three ways: software
+            made for your business alone, AI solutions that take on the repetitive work, and
+            ready-made tools for the needs many businesses share.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link
@@ -79,22 +105,31 @@ export default function ProfessionalsPage() {
       </section>
 
       <section className="py-20">
-        <div className="mx-auto grid max-w-5xl gap-12 px-6 md:grid-cols-[1fr_1.3fr]">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-gideon-blue">For example</p>
-            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900">What we can build</h2>
-            <p className="mt-4 leading-relaxed text-slate-600">
-              If you do it the same way every week and wish you didn&rsquo;t have to, it&rsquo;s
-              probably a good fit.
-            </p>
-          </div>
-          <ul className="grid gap-3 sm:grid-cols-2">
-            {examples.map((e) => (
-              <li key={e} className="rounded-xl border border-slate-200 bg-white p-4 text-sm leading-relaxed text-slate-700">
-                {e}
-              </li>
+        <div className="mx-auto max-w-6xl px-6">
+          <p className="text-sm font-semibold uppercase tracking-wider text-gideon-blue">Three ways we help</p>
+          <h2 className="mt-2 max-w-2xl text-3xl font-semibold tracking-tight text-slate-900">
+            If you do it the same way every week and wish you didn&rsquo;t have to, there&rsquo;s
+            probably a better way.
+          </h2>
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            {ways.map((w) => (
+              <div key={w.title} className="flex flex-col rounded-2xl border border-slate-200 bg-white p-7">
+                <h3 className="text-xl font-semibold tracking-tight text-slate-900">{w.title}</h3>
+                <p className="mt-1 text-sm font-medium text-gideon-blue">{w.lead}</p>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600">{w.body}</p>
+                <ul className="mt-5 space-y-2 text-sm leading-relaxed text-slate-700">
+                  {w.examples.map((e) => (
+                    <li key={e} className="flex gap-2">
+                      <span aria-hidden="true" className="text-gideon-blue">
+                        ·
+                      </span>
+                      {e}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
