@@ -38,7 +38,7 @@ const steps = [
   },
   {
     title: "Decide what's next",
-    body: "If it's worth building properly, Gideon for Professionals can take it from there, with a written quote before any work starts. If not, you leave with ideas, and that's fine too.",
+    body: "If it's worth building properly, Gideon for Professionals can take it from there: custom software or an AI solution, with a written quote before any work starts. If others share the problem, it may become a ready-made tool. If not, you leave with ideas, and that's fine too.",
   },
 ];
 
