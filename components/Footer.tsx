@@ -51,6 +51,11 @@ export default function Footer() {
             <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500">Company</h2>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
+                <Link href="/open-day" className="transition-colors hover:text-slate-900">
+                  Gideon Open Day
+                </Link>
+              </li>
+              <li>
                 <Link href="/#about" className="transition-colors hover:text-slate-900">
                   How we work
                 </Link>

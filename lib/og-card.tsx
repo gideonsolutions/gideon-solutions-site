@@ -57,3 +57,47 @@ export function renderOgCard() {
     { ...OG_SIZE },
   );
 }
+
+export const OPEN_DAY_OG_ALT = "Gideon Open Day — bring a problem from your business, and let's build the software for it";
+
+/**
+ * The share card for /open-day: the next evening's date, so an invitation
+ * posted anywhere says when. Read at build time like the page (hourly).
+ */
+export function renderOpenDayCard(when: string, tentative: boolean) {
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          width: "100%",
+          height: "100%",
+          padding: 72,
+          color: "#ffffff",
+          background: "#013ea9",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: 26 }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logoSrc} width={96} height={96} alt="" />
+          <span style={{ fontSize: 46, fontWeight: 700, letterSpacing: -1 }}>Gideon Open Day</span>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
+          <div style={{ fontSize: 64, fontWeight: 800, lineHeight: 1.08, letterSpacing: -2 }}>
+            Bring a problem from your business. Let&rsquo;s build the software for it.
+          </div>
+          <div style={{ fontSize: 34, color: "#dbe7ff" }}>{tentative ? `${when} · date tentative` : when}</div>
+        </div>
+
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <span style={{ fontSize: 30, fontWeight: 600, color: "#ffffff" }}>gideonsolutions.us/open-day</span>
+          <span style={{ fontSize: 26, color: "#c5d6f7" }}>Free · small businesses &amp; independent contractors</span>
+        </div>
+      </div>
+    ),
+    { ...OG_SIZE },
+  );
+}

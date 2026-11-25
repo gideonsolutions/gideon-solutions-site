@@ -1,13 +1,28 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
-import { ADDRESS, CONTACT_EMAIL, CONTACT_NAME, LEGAL_ENTITY } from "@/lib/products";
+import { OPEN_DAY_CITY, OPEN_DAY_TOPIC, nextOpenDay, openDayDate, openDayTime } from "@/lib/open-day";
+import { ADDRESS, CONTACT_EMAIL, CONTACT_NAME, LEGAL_ENTITY, PRODUCTS } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "Contact",
   description: "Write to Gideon Solutions — a question, a bug, or a form you wish one of the products filed. A person answers.",
 };
 
-export default function ContactPage() {
+/** `?about=` → the form's "About" choice: `open-day` for an RSVP, or a product's key. */
+function interestFor(about: string | undefined): string {
+  if (about === "open-day") return OPEN_DAY_TOPIC;
+  return PRODUCTS.find((p) => p.key === about)?.name ?? "";
+}
+
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ about?: string | string[] }>;
+}) {
+  const { about } = await searchParams;
+  const interest = interestFor(Array.isArray(about) ? about[0] : about);
+  const rsvp = interest === OPEN_DAY_TOPIC;
+  const next = nextOpenDay();
   return (
     <div className="bg-slate-50 py-16 sm:py-20">
       <div className="mx-auto max-w-3xl px-6">
@@ -20,8 +35,24 @@ export default function ContactPage() {
           send it here. A person reads it and answers.
         </p>
 
+        {rsvp && (
+          <div className="mt-8 rounded-2xl border border-blue-200 bg-blue-50 p-6 text-slate-800">
+            <p className="font-semibold">RSVP for Gideon Open Day</p>
+            <p className="mt-1 text-sm leading-relaxed">
+              {next
+                ? `${openDayDate(next)}, ${openDayTime(next)}, ${OPEN_DAY_CITY}${next.tentative ? " (date tentative)" : ""}. `
+                : "The next date is being set; we'll write when it is. "}
+              Tell us your name, your business, and the problem you&rsquo;d like to bring. We&rsquo;ll
+              reply with the address.
+            </p>
+          </div>
+        )}
+
         <div className="mt-10 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-          <ContactForm />
+          <ContactForm
+            defaultInterest={interest}
+            messagePlaceholder={rsvp ? "Your business, and the problem you'd like to bring." : undefined}
+          />
         </div>
 
         <div className="mt-8 grid gap-6 text-sm text-slate-600 sm:grid-cols-2">

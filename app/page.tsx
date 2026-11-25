@@ -1,6 +1,10 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
+import { OPEN_DAY_CITY, OPEN_DAY_RSVP_HREF, nextOpenDay, openDayDate, openDayTime } from "@/lib/open-day";
 import { CONTACT_EMAIL, PRODUCTS } from "@/lib/products";
+
+// The Open Day band shows the next evening; rebuild hourly so a past one gives way.
+export const revalidate = 3600;
 
 const principles = [
   {
@@ -22,6 +26,7 @@ const principles = [
 ];
 
 export default function Home() {
+  const nextOpen = nextOpenDay();
   const live = PRODUCTS.filter((p) => p.status === "live").length;
   const building = PRODUCTS.filter((p) => p.status !== "live").length;
   return (
@@ -65,6 +70,38 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Gideon Open Day */}
+      {nextOpen && (
+        <section aria-labelledby="open-day-heading" className="border-b border-blue-100 bg-blue-50">
+          <div className="mx-auto flex max-w-6xl flex-col gap-5 px-6 py-8 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wider text-gideon-blue">
+                Gideon Open Day · {openDayDate(nextOpen)} · {openDayTime(nextOpen)} · {OPEN_DAY_CITY}
+                {nextOpen.tentative && " · date tentative"}
+              </p>
+              <h2 id="open-day-heading" className="mt-1 text-xl font-semibold tracking-tight text-slate-900">
+                Run a small business or work for yourself? Bring a problem, and let&rsquo;s build the software for it.
+              </h2>
+              <p className="mt-1 text-sm text-slate-600">Free, once a month, and everyone is welcome.</p>
+            </div>
+            <div className="flex shrink-0 gap-3">
+              <Link
+                href={OPEN_DAY_RSVP_HREF}
+                className="rounded-lg bg-gideon-blue px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-800"
+              >
+                RSVP
+              </Link>
+              <Link
+                href="/open-day"
+                className="rounded-lg border border-blue-200 bg-white px-5 py-2.5 text-sm font-semibold text-gideon-blue transition hover:bg-blue-100"
+              >
+                What happens
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Products */}
       <section id="products" className="scroll-mt-20 bg-slate-50 py-20">
         <div className="mx-auto max-w-6xl px-6">
@@ -97,11 +134,12 @@ export default function Home() {
                 Plain prices, plain words, and a person who answers.
               </h2>
               <p className="mt-4 text-base leading-relaxed text-slate-600">
-                We are a small software company, not a consultancy. What we sell is
-                the products above, each at the price it states before you start. The
-                one exception is the Enrolled Agent work at Gideon Tax: consultations
-                and IRS representation are billed by the hour, at the rates its page
-                states, with an estimate first.
+                We are a small software company. Most of what we sell is the products
+                above, each at the price it states before you start. Two things are made
+                to order: the Enrolled Agent work at Gideon Tax, where consultations and
+                IRS representation are billed by the hour at the rates its page states,
+                with an estimate first; and Gideon for Professionals, software built for
+                one business at a time and quoted in writing before any work starts.
               </p>
               <p className="mt-6 text-sm text-slate-500">
                 Questions, a bug, or a form you wish we filed?{" "}
